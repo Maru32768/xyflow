@@ -1,16 +1,16 @@
 {
   "name": "react-flow-renderer",
+  "private": "true",
   "version": "9.7.4",
   "engines": {
     "node": ">=12"
   },
-  "main": "dist/ReactFlow.js",
-  "module": "dist/ReactFlow.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wbkd/react-flow.git"
+    "url": "https://github.com/Maru32768/xyflow.git"
   },
   "scripts": {
     "build": "rollup -c --environment NODE_ENV:production && postcss src/*.css --dir dist",
