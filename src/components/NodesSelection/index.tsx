@@ -121,6 +121,7 @@ export default ({
 
   return (
     <div className="react-flow__nodesselection" style={style}>
+      {/* @ts-ignore */}
       <ReactDraggable
         scale={tScale}
         grid={grid}

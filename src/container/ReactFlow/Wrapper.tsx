@@ -1,9 +1,9 @@
-import React, { FC, useContext, useMemo } from 'react';
+import React, {PropsWithChildren, useContext, useMemo} from 'react';
 import { Provider, ReactReduxContext } from 'react-redux';
 
 import store from '../../store';
 
-const Wrapper: FC = ({ children }) => {
+const Wrapper = ({ children }: PropsWithChildren) => {
   const contextValue = useContext(ReactReduxContext);
   const isWrappedWithReactFlowProvider = useMemo(() => contextValue?.store?.getState()?.reactFlowVersion, [
     contextValue,

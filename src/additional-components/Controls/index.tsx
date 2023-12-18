@@ -1,4 +1,4 @@
-import React, { memo, useCallback, HTMLAttributes, FC, useEffect, useState } from 'react';
+import React, { memo, useCallback, HTMLAttributes, useEffect, useState, PropsWithChildren } from 'react';
 import cc from 'classcat';
 
 import { useStoreState, useStoreActions } from '../../store/hooks';
@@ -25,13 +25,13 @@ export interface ControlProps extends HTMLAttributes<HTMLDivElement> {
 
 export interface ControlButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 
-export const ControlButton: FC<ControlButtonProps> = ({ children, className, ...rest }) => (
+export const ControlButton = ({ children, className, ...rest }: PropsWithChildren<ControlButtonProps>) => (
   <button type="button" className={cc(['react-flow__controls-button', className])} {...rest}>
     {children}
   </button>
 );
 
-const Controls: FC<ControlProps> = ({
+const Controls = ({
   style,
   showZoom = true,
   showFitView = true,
@@ -43,7 +43,7 @@ const Controls: FC<ControlProps> = ({
   onInteractiveChange,
   className,
   children,
-}) => {
+}: PropsWithChildren<ControlProps>) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const setInteractive = useStoreActions((actions) => actions.setInteractive);
   const { zoomIn, zoomOut, fitView } = useZoomPanHelper();

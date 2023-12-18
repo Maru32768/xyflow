@@ -2,6 +2,7 @@ import { Store } from 'redux';
 import configureStore from './configure-store';
 
 import { ReactFlowState, ConnectionMode } from '../types';
+import {ReactFlowAction} from "./actions";
 
 export const initialState: ReactFlowState = {
   width: 0,
@@ -57,7 +58,7 @@ export const initialState: ReactFlowState = {
   reactFlowVersion: typeof __REACT_FLOW_VERSION__ !== 'undefined' ? __REACT_FLOW_VERSION__ : '-',
 };
 
-const store: Store = configureStore(initialState);
+const store: Store<ReactFlowState, ReactFlowAction> = configureStore(initialState);
 
 export type ReactFlowDispatch = typeof store.dispatch;
 

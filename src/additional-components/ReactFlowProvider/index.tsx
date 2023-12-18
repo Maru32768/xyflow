@@ -1,10 +1,10 @@
-import React, { FC, useMemo } from 'react';
+import React, { PropsWithChildren, useMemo} from 'react';
 import { Provider } from 'react-redux';
 
 import { initialState } from '../../store';
 import configureStore from '../../store/configure-store';
 
-const ReactFlowProvider: FC = ({ children }) => {
+const ReactFlowProvider = ({ children }: PropsWithChildren) => {
   const store = useMemo(() => {
     return configureStore(initialState);
   }, []);

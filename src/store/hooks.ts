@@ -45,4 +45,4 @@ export const useStore = (): Store<ReactFlowState, ReactFlowAction> => {
   const store = useStoreRedux<ReactFlowState, ReactFlowAction>();
   return store;
 };
-export const useDispatch: ReactFlowDispatch = reduxUseDispatch;
+export const useDispatch: () => ReactFlowDispatch = reduxUseDispatch;

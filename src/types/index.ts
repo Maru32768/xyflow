@@ -1,4 +1,10 @@
-import React, { CSSProperties, MouseEvent as ReactMouseEvent, HTMLAttributes, ReactNode } from 'react';
+import React, {
+  CSSProperties,
+  MouseEvent as ReactMouseEvent,
+  HTMLAttributes,
+  ReactNode,
+  ComponentType
+} from 'react';
 import { Selection as D3Selection, ZoomBehavior } from 'd3';
 
 export type ElementId = string;
@@ -85,7 +91,7 @@ export enum BackgroundVariant {
 
 export type HandleType = 'source' | 'target';
 
-export type NodeTypesType = { [key: string]: ReactNode };
+export type NodeTypesType = { [key: string]: ComponentType<any> };
 
 export type EdgeTypesType = NodeTypesType;
 

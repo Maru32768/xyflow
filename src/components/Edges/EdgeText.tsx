@@ -1,9 +1,9 @@
-import React, { memo, useRef, useState, useEffect, FC } from 'react';
+import React, { memo, useRef, useState, useEffect, PropsWithChildren } from 'react';
 import cc from 'classcat';
 
 import { EdgeTextProps, Rect } from '../../types';
 
-const EdgeText: FC<EdgeTextProps> = ({
+const EdgeText = ({
   x,
   y,
   label,
@@ -15,7 +15,7 @@ const EdgeText: FC<EdgeTextProps> = ({
   children,
   className,
   ...rest
-}) => {
+}: PropsWithChildren<EdgeTextProps>) => {
   const edgeRef = useRef<SVGTextElement>(null);
   const [edgeTextBbox, setEdgeTextBbox] = useState<Rect>({ x: 0, y: 0, width: 0, height: 0 });
   const edgeTextClasses = cc(['react-flow__edge-textwrapper', className]);
