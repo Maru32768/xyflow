@@ -1099,7 +1099,7 @@ var useStore = function useStore() {
   var store = useStore$1();
   return store;
 };
-var useDispatch = useDispatch$1();
+var useDispatch = useDispatch$1;
 
 function _arrayLikeToArray$1(arr, len) {
   if (len == null || len > arr.length) len = arr.length;

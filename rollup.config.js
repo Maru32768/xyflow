@@ -2,13 +2,13 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
-import bundleSize from 'rollup-plugin-bundle-size';
 import replace from '@rollup/plugin-replace';
 import svgr from '@svgr/rollup';
 import typescript from 'rollup-plugin-typescript2';
 import { DEFAULT_EXTENSIONS as DEFAULT_BABEL_EXTENSIONS } from '@babel/core';
 
 import pkg from './package.json';
+import filesize from 'rollup-plugin-filesize';
 
 const isProd = process.env.NODE_ENV === 'production';
 const isTesting = process.env.NODE_ENV === 'testing';
@@ -42,7 +42,7 @@ export const baseConfig = ({ mainFile = pkg.main, moduleFile = pkg.module, injec
       __REACT_FLOW_VERSION__: JSON.stringify(pkg.version),
       preventAssignment: true,
     }),
-    bundleSize(),
+    filesize(),
     postcss({
       minimize: isProd,
       inject: injectCSS,

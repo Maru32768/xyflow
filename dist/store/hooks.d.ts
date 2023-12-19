@@ -12,4 +12,4 @@ export declare function useStoreActions<Action extends ReactFlowAction>(actionSe
 export declare function useStoreActions<Action extends ReactFlowAction>(actionSelector: ActionMapObjectSelector<Action>): ActionCreatorsMapObject<Action>;
 export declare const useStoreState: TypedUseSelectorHook<ReactFlowState>;
 export declare const useStore: () => Store<ReactFlowState, ReactFlowAction>;
-export declare const useDispatch: ReactFlowDispatch;
+export declare const useDispatch: () => ReactFlowDispatch;
