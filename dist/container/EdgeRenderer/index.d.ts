@@ -32,7 +32,7 @@ interface EdgeWrapperProps {
     onlyRenderVisibleElements: boolean;
     connectionMode?: ConnectionMode;
 }
-declare const Edge: ({ edge, props, nodes, selectedElements, elementsSelectable, transform, width, height, onlyRenderVisibleElements, connectionMode, }: EdgeWrapperProps) => React.JSX.Element | null;
+declare const Edge: React.MemoExoticComponent<({ edge, props, nodes, selectedElements, elementsSelectable, transform, width, height, onlyRenderVisibleElements, connectionMode, }: EdgeWrapperProps) => React.JSX.Element | null>;
 declare const _default: React.MemoExoticComponent<{
     (props: EdgeRendererProps): React.JSX.Element | null;
     displayName: string;
